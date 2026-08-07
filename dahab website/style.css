@@ -1,0 +1,1154 @@
+/* ==========================================================================
+   مناحل دهب - المتجر الإلكتروني الفاخر (Black & Gold Theme)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. المتغيرات ونظام الألوان الملكي (Design Tokens)
+   -------------------------------------------------------------------------- */
+:root {
+    /* الألوان الأساسية */
+    --bg-dark: #0A0A0C;
+    --bg-surface: #121216;
+    --bg-card: rgba(22, 22, 28, 0.75);
+    --bg-glass: rgba(18, 18, 24, 0.65);
+    
+    /* الألوان الذهبية الملكية */
+    --gold-primary: #D4AF37;
+    --gold-bright: #FFD700;
+    --gold-amber: #F59E0B;
+    --gold-dark: #996515;
+    --gold-light: rgba(212, 175, 55, 0.12);
+    
+    /* التدرجات البصرية */
+    --grad-gold-main: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+    --grad-gold-metallic: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+    --grad-gold-dark: linear-gradient(135deg, #1F1A0E 0%, #0A0A0C 100%);
+    --grad-dark-card: linear-gradient(145deg, rgba(28, 28, 36, 0.8) 0%, rgba(14, 14, 18, 0.9) 100%);
+    --grad-amber-glow: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(10, 10, 12, 0) 70%);
+
+    /* ألوان النصوص */
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --text-gold: #F3C649;
+    
+    /* الحدود والظلال */
+    --border-gold: rgba(212, 175, 55, 0.22);
+    --border-gold-bright: rgba(255, 215, 0, 0.55);
+    --shadow-gold-glow: 0 0 30px rgba(212, 175, 55, 0.18);
+    --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.3);
+    
+    /* واتساب */
+    --whatsapp-green: #25D366;
+    --whatsapp-hover: #20BA56;
+    
+    /* الخطوط والانتقالات */
+    --font-family: 'Cairo', sans-serif;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. التهوئة الإعدادات العامة (Reset & Globals)
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    text-align: right;
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.06) 0%, transparent 45%);
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. النص المذهب والعناصر المشتركة
+   -------------------------------------------------------------------------- */
+.text-gold-gradient {
+    background: var(--grad-gold-metallic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.section-title {
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.section-title .badge-sub {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold-bright);
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--border-gold);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.section-title h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-top: 0.3rem;
+}
+
+.section-title p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-top: 0.8rem;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-divider {
+    width: 80px;
+    height: 3px;
+    background: var(--grad-gold-main);
+    margin: 1.2rem auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+}
+
+/* الأزرار الفاخرة */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-family: var(--font-family);
+    font-weight: 700;
+    padding: 0.85rem 1.8rem;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition-normal);
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-gold {
+    background: var(--grad-gold-main);
+    color: #0A0A0C;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+    font-weight: 800;
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+    filter: brightness(1.08);
+}
+
+.btn-outline-gold {
+    background: transparent;
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-bright);
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline-gold:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--gold-bright);
+    box-shadow: var(--shadow-gold-glow);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp-green);
+    color: #FFFFFF;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--whatsapp-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   4. الهيدر وشريط الإعلانات (Header & Announcement Bar)
+   -------------------------------------------------------------------------- */
+.top-announcement {
+    background: linear-gradient(90deg, #16140D 0%, #2A2111 50%, #16140D 100%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 0.4rem 0;
+    font-size: 0.82rem;
+    color: var(--gold-bright);
+    text-align: center;
+    font-weight: 600;
+}
+
+.main-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 12, 0.82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border-gold);
+    transition: all var(--transition-normal);
+}
+
+.main-header.scrolled {
+    background: rgba(10, 10, 12, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    padding: 0.2rem 0;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--gold-bright);
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold-bright);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--grad-gold-main);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* زر سلة التسوق التفاعلي */
+.cart-trigger-btn {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    color: var(--gold-bright);
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.cart-trigger-btn:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--gold-bright);
+    box-shadow: var(--shadow-gold-glow);
+    transform: scale(1.05);
+}
+
+.cart-count-badge {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    background: var(--grad-gold-main);
+    color: #0A0A0C;
+    font-weight: 800;
+    font-size: 0.75rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.mobile-menu-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--gold-bright);
+    border-radius: 3px;
+    transition: all var(--transition-normal);
+}
+
+/* --------------------------------------------------------------------------
+   5. قسم الهيرو الفاخر (Hero Section)
+   -------------------------------------------------------------------------- */
+.hero-section {
+    position: relative;
+    padding: 140px 0 100px;
+    background: linear-gradient(180deg, #0A0A0C 0%, #121218 100%);
+    overflow: hidden;
+}
+
+.hero-bg-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(10, 10, 12, 0) 70%);
+    top: -100px;
+    right: -100px;
+    filter: blur(50px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content .badge {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--border-gold);
+    color: var(--gold-bright);
+    padding: 0.45rem 1.3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 3.3rem;
+    font-weight: 800;
+    line-height: 1.22;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.2rem;
+    max-width: 580px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    padding-top: 2rem;
+}
+
+.stat-item h3 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    background: var(--grad-gold-metallic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-item p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* الرسوم التفاعلية للبرطمان الذهبي */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-visual-card {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background: var(--grad-dark-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 30px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card), var(--shadow-gold-glow);
+    backdrop-filter: blur(15px);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* --------------------------------------------------------------------------
+   6. قسم الفلترة وتنسيقات بطاقات المنتجات (Products & Cards System)
+   -------------------------------------------------------------------------- */
+.products-section {
+    padding: 110px 0;
+    background: var(--bg-dark);
+    position: relative;
+}
+
+/* تبويبات الفلترة */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    color: var(--text-secondary);
+    padding: 0.65rem 1.6rem;
+    border-radius: 50px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--grad-gold-main);
+    color: #0A0A0C;
+    border-color: var(--gold-bright);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* شبكة البطاقات */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 2.5rem;
+}
+
+/* تصميم البطاقات البطاقات الزجاجية الذهبية */
+.product-card {
+    background: var(--grad-dark-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: all var(--transition-normal);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(12px);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--border-gold-bright);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.product-badge {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: var(--grad-gold-main);
+    color: #0A0A0C;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.product-image-area {
+    height: 220px;
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.12) 0%, rgba(18, 18, 24, 0.9) 70%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* الأشكال التجريدية الفاخرة للبرطمان */
+.jar-icon-visual {
+    width: 95px;
+    height: 125px;
+    border-radius: 28px 28px 22px 22px;
+    position: relative;
+    box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.2), 0 12px 25px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition-normal);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.product-card:hover .jar-icon-visual {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.jar-icon-visual::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: 8px;
+    right: 8px;
+    height: 16px;
+    background: var(--grad-gold-metallic);
+    border-radius: 8px 8px 3px 3px;
+    box-shadow: inset 0 -3px 5px rgba(0,0,0,0.4);
+}
+
+.jar-sidr { background: linear-gradient(135deg, #7A3F0E 0%, #D4AF37 100%); }
+.jar-citrus { background: linear-gradient(135deg, #E59800 0%, #FFD066 100%); }
+.jar-clover { background: linear-gradient(135deg, #F2B705 0%, #F2E3B6 100%); }
+.jar-wax { background: linear-gradient(135deg, #D47600 0%, #F59E0B 100%); }
+.jar-nuts { background: linear-gradient(135deg, #5C320A 0%, #D4AF37 100%); }
+
+.product-details {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--gold-bright);
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.product-desc {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin-bottom: 1.2rem;
+    min-height: 52px;
+}
+
+/* محدد وزن المنتج (0.5كجم / 1كجم) */
+.weight-selector-box {
+    margin-bottom: 1.4rem;
+    background: rgba(10, 10, 12, 0.4);
+    padding: 0.8rem;
+    border-radius: 14px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.weight-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.weight-options {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.weight-btn {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    color: var(--text-secondary);
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.weight-btn.active {
+    background: var(--grad-gold-main);
+    color: #0A0A0C;
+    border-color: var(--gold-bright);
+    font-weight: 800;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
+
+.product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-number {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--gold-bright);
+    line-height: 1.1;
+}
+
+.price-currency {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.6rem;
+    width: 65%;
+}
+
+.add-cart-btn {
+    flex: 1;
+    background: var(--grad-gold-main);
+    color: #0A0A0C;
+    border: none;
+    padding: 0.75rem 0.6rem;
+    border-radius: 10px;
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 0.88rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: all var(--transition-fast);
+}
+
+.add-cart-btn:hover {
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.whatsapp-direct-btn {
+    background: rgba(37, 211, 102, 0.15);
+    border: 1px solid rgba(37, 211, 102, 0.4);
+    color: #25D366;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.whatsapp-direct-btn:hover {
+    background: #25D366;
+    color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   7. سلة التسوق الجانبية (Cart Drawer)
+   -------------------------------------------------------------------------- */
+.cart-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.cart-drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    background: #101014;
+    border-right: 1px solid var(--border-gold);
+    z-index: 2001;
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.9);
+}
+
+.cart-drawer-overlay.active .cart-drawer {
+    transform: translateX(0);
+}
+
+.cart-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-gold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(22, 22, 28, 0.8);
+}
+
+.cart-header h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--gold-bright);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.close-cart-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.close-cart-btn:hover {
+    color: var(--gold-bright);
+}
+
+.cart-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.cart-empty-msg {
+    text-align: center;
+    margin: auto 0;
+    color: var(--text-muted);
+}
+
+.cart-empty-icon {
+    width: 60px;
+    height: 60px;
+    color: var(--gold-primary);
+    opacity: 0.4;
+    margin-bottom: 1rem;
+}
+
+.cart-item {
+    background: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.cart-item-weight {
+    font-size: 0.8rem;
+    color: var(--gold-bright);
+    margin-bottom: 0.4rem;
+}
+
+.cart-item-price {
+    font-weight: 800;
+    color: var(--gold-bright);
+    font-size: 0.95rem;
+}
+
+.cart-qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(10, 10, 12, 0.6);
+    border: 1px solid var(--border-gold);
+    border-radius: 8px;
+    padding: 0.2rem 0.5rem;
+}
+
+.qty-btn {
+    background: transparent;
+    border: none;
+    color: var(--gold-bright);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.cart-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-gold);
+    background: rgba(22, 22, 28, 0.9);
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.cart-total-val {
+    color: var(--gold-bright);
+    font-size: 1.4rem;
+}
+
+.checkout-whatsapp-btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. قسم مميزات مناحل دهب (Features Section)
+   -------------------------------------------------------------------------- */
+.features-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #121218 0%, #0A0A0C 100%);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 20px;
+    padding: 2.2rem 1.8rem;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-gold-bright);
+    box-shadow: var(--shadow-gold-glow);
+}
+
+.feature-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid var(--border-gold);
+    color: var(--gold-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+}
+
+.feature-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   9. قسم من نحن (About Section)
+   -------------------------------------------------------------------------- */
+.about-section {
+    padding: 100px 0;
+    background: var(--bg-dark);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-card-visual {
+    background: var(--grad-dark-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 28px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-gold-glow);
+    position: relative;
+}
+
+.about-card-visual .honeycomb-pattern {
+    font-size: 5rem;
+    color: var(--gold-bright);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   10. الأسئلة الشائعة والفوتر (FAQ & Footer)
+   -------------------------------------------------------------------------- */
+.faq-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #0A0A0C 0%, #121218 100%);
+}
+
+.faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all var(--transition-fast);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.3rem 1.6rem;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1.6rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.faq-item.active .faq-answer {
+    padding-bottom: 1.3rem;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+    color: var(--gold-bright);
+}
+
+.main-footer {
+    background: #060608;
+    border-top: 1px solid var(--border-gold);
+    padding: 70px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    padding-top: 2rem;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   11. التجاوب وتنسيقات الهواتف (Responsive Design)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .hero-container, .about-grid, .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: calc(100vh - 80px);
+        background: #0E0E12;
+        border-left: 1px solid var(--border-gold);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.5rem;
+        transition: right var(--transition-normal);
+    }
+
+    .nav-menu.open {
+        right: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-stats {
+        gap: 1.5rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}

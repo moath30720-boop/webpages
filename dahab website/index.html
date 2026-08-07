@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مناحل دهب | متجر العسل الطبيعي الفاخر 100%</title>
+    <meta name="description" content="متجر مناحل دهب لبيع أجود أنواع العسل الطبيعي النقي: عسل السدر، عسل البرسيم، عسل الموالح، شمع العسل وعسل بالمكسرات. عسل مفحوص مخبرياً يصلك حتى باب بيتك.">
+    <!-- Google Fonts (Cairo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-announcement">
+        ✨ توصيل سريع لجميع المحافظات | عسل طبيعي مفحوص مخبرياً ومضمون 100% | اطلب الآن مباشرة عبر الواتساب
+    </div>
+
+    <!-- الهيدر الرئيسي (Header / Navbar) -->
+    <header class="main-header" id="mainHeader">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                </svg>
+                <span>مناحل <strong class="text-gold-gradient">دهب</strong></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">الرئيسية</a>
+                <a href="#products" class="nav-link">منتجاتنا</a>
+                <a href="#features" class="nav-link">لماذا دهب؟</a>
+                <a href="#about" class="nav-link">عن المناحل</a>
+                <a href="#faq" class="nav-link">الأسئلة الشائعة</a>
+            </nav>
+
+            <div class="header-actions">
+                <!-- زر سلة التسوق التفاعلي -->
+                <button class="cart-trigger-btn" id="cartTriggerBtn" aria-label="سلة التسوق">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count-badge" id="cartCountBadge">0</span>
+                </button>
+
+                <!-- زر القائمة للموبايل -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="قائمة الموبايل">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم الهيرو (Hero Section) -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge">
+                    <span>🍯</span> عسل خام طبيعي 100% بدون أي إضافات
+                </div>
+                <h1>نقاء الطبيعة الملكية في <br><span class="text-gold-gradient">مناحل دهب</span></h1>
+                <p>نقدم لك أجود سلالات العسل الطبيعي المستخرج بعناية فائقة من خلايانا مباشرة، مفحوص مخبرياً ومغلف بعبوات فاخرة تحفظ قيمته الشفائية والتغذوية العالية.</p>
+                
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-gold">تسوق المنتجات الآن</a>
+                    <a href="https://wa.me/201093579694?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%86%D8%A7%D8%AD%D9%84%20%D8%AF%D9%87%D8%A8%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%D9%83%D9%85" target="_blank" class="btn btn-outline-gold">
+                        تحدث معنا عبر واتساب
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>طبيعي ونقي</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>مفحوص</h3>
+                        <p>في أكبر المعامل</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>+2500</h3>
+                        <p>عميل سعيد</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة التوهج البصري للهيرو -->
+            <div class="hero-visual">
+                <div class="hero-visual-card">
+                    <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+                        <defs>
+                            <linearGradient id="goldJarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FFD700" />
+                                <stop offset="50%" stop-color="#D4AF37" />
+                                <stop offset="100%" stop-color="#996515" />
+                            </linearGradient>
+                            <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="12" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <circle cx="150" cy="150" r="100" fill="url(#goldJarGrad)" opacity="0.18" filter="url(#glowFilter)"/>
+                        <rect x="90" y="90" width="120" height="150" rx="28" fill="url(#goldJarGrad)" stroke="#FFE259" stroke-width="2"/>
+                        <rect x="80" y="60" width="140" height="30" rx="10" fill="#2A2010" stroke="#D4AF37" stroke-width="2"/>
+                        <rect x="110" y="130" width="80" height="70" rx="8" fill="#121216" stroke="#D4AF37" stroke-width="1"/>
+                        <text x="150" y="170" font-family="'Cairo', sans-serif" font-weight="800" font-size="14" fill="#FFD700" text-anchor="middle">مناحل دهب</text>
+                        <path d="M150 215C150 215 140 230 140 237C140 242.5 144.5 247 150 247C155.5 247 160 242.5 160 237C160 230 150 215 150 215Z" fill="#FFD700"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم بطاقات المنتجات (Products Cards Section) -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <div class="badge-sub">تشكيلة المنتجات الملكية</div>
+                <h2>بطاقات المنتجات والطلب الفوري</h2>
+                <p>اختر العسل المفضل لديك، حدد الوزن المناسب (0.5 كجم أو 1 كجم) ثم أضفه لسلة التسوق أو اطلبه فوراً عبر الواتساب.</p>
+                <div class="title-divider"></div>
+            </div>
+
+            <!-- أزرار الفلترة والتصنيف -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">جميع المنتجات</button>
+                <button class="filter-btn" data-filter="honey">أنواع العسل</button>
+                <button class="filter-btn" data-filter="mix">الخلطات والشمع</button>
+            </div>
+
+            <!-- شبكة بطاقات المنتجات (Products Grid) -->
+            <div class="products-grid">
+                
+                <!-- 1. بطاقة عسل البرسيم -->
+                <div class="product-card" data-category="honey" data-id="clover-honey" data-name="عسل البرسيم">
+                    <div class="product-badge">زهرة البرسيم النقية</div>
+                    <div class="product-image-area">
+                        <div class="jar-icon-visual jar-clover"></div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">عسل البرسيم (نوارة البرسيم)</h3>
+                        <div class="product-rating">
+                            <span>★ ★ ★ ★ ★</span> (4.9/5)
+                        </div>
+                        <p class="product-desc">عسل يومي ذو نكهة زهرية خفيفة ولون ذهبي فاتح، ممتاز لتغذية الأطفال ومصدر فوري للطاقة.</p>
+                        
+                        <!-- محدد الوزن (0.5كجم / 1كجم) -->
+                        <div class="weight-selector-box">
+                            <span class="weight-title">اختر الوزن المطلوب:</span>
+                            <div class="weight-options">
+                                <button class="weight-btn active" data-price="180" data-weight="1 كجم">1 كجم (180 ج.م)</button>
+                                <button class="weight-btn" data-price="100" data-weight="0.5 كجم">0.5 كجم (100 ج.م)</button>
+                            </div>
+                        </div>
+
+                        <div class="product-footer">
+                            <div class="price-container">
+                                <span class="price-number">180</span>
+                                <span class="price-currency">جنيه مصري</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="add-cart-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                    أضف للسلة
+                                </button>
+                                <button class="whatsapp-direct-btn" title="طلب مباشر عبر واتساب">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.514 0-9.989 4.478-9.989 9.993 0 1.763.459 3.483 1.33 5.004L2 22l5.148-1.348c1.468.8 3.111 1.22 4.88 1.22 5.513 0 9.991-4.476 9.991-9.99C22.02 6.478 17.545 2 12.031 2zm4.965 14.218c-.217.616-1.09 1.205-1.5 1.285-.366.071-.84.1-2.427-.562-2.03-.847-3.329-2.91-3.43-3.045-.1-.134-.813-.974-.813-1.942 0-.967.505-1.442.685-1.631.18-.189.395-.236.526-.236.13 0 .262.001.378.006.121.005.281-.047.439.333.163.389.557 1.354.606 1.453.049.098.082.213.016.344-.066.13-.131.21-.262.363-.13.152-.273.34-.39.456-.131.131-.268.273-.115.536.153.263.682 1.124 1.46 1.815.998.887 1.834 1.162 2.097 1.293.262.13.417.11.572-.07.154-.18.66-.767.838-1.027.177-.259.354-.217.596-.128.243.09.1.488 1.545 1.209.243.121.405.18.497.332.092.152.092.883-.125 1.5z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. بطاقة عسل الموالح -->
+                <div class="product-card" data-category="honey" data-id="citrus-honey" data-name="عسل الموالح">
+                    <div class="product-badge">غني بفيتامين C</div>
+                    <div class="product-image-area">
+                        <div class="jar-icon-visual jar-citrus"></div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">عسل الموالح (حمضيات)</h3>
+                        <div class="product-rating">
+                            <span>★ ★ ★ ★ ★</span> (4.9/5)
+                        </div>
+                        <p class="product-desc">مستخلص من زهور البرتقال والليمون، يتميز بنكهته العطرية الزكية ومفيد جداً لنزلات البرد والجهاز التنفسي.</p>
+                        
+                        <!-- محدد الوزن (0.5كجم / 1كجم) -->
+                        <div class="weight-selector-box">
+                            <span class="weight-title">اختر الوزن المطلوب:</span>
+                            <div class="weight-options">
+                                <button class="weight-btn active" data-price="220" data-weight="1 كجم">1 كجم (220 ج.م)</button>
+                                <button class="weight-btn" data-price="120" data-weight="0.5 كجم">0.5 كجم (120 ج.م)</button>
+                            </div>
+                        </div>
+
+                        <div class="product-footer">
+                            <div class="price-container">
+                                <span class="price-number">220</span>
+                                <span class="price-currency">جنيه مصري</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="add-cart-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                    أضف للسلة
+                                </button>
+                                <button class="whatsapp-direct-btn" title="طلب مباشر عبر واتساب">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.514 0-9.989 4.478-9.989 9.993 0 1.763.459 3.483 1.33 5.004L2 22l5.148-1.348c1.468.8 3.111 1.22 4.88 1.22 5.513 0 9.991-4.476 9.991-9.99C22.02 6.478 17.545 2 12.031 2zm4.965 14.218c-.217.616-1.09 1.205-1.5 1.285-.366.071-.84.1-2.427-.562-2.03-.847-3.329-2.91-3.43-3.045-.1-.134-.813-.974-.813-1.942 0-.967.505-1.442.685-1.631.18-.189.395-.236.526-.236.13 0 .262.001.378.006.121.005.281-.047.439.333.163.389.557 1.354.606 1.453.049.098.082.213.016.344-.066.13-.131.21-.262.363-.13.152-.273.34-.39.456-.131.131-.268.273-.115.536.153.263.682 1.124 1.46 1.815.998.887 1.834 1.162 2.097 1.293.262.13.417.11.572-.07.154-.18.66-.767.838-1.027.177-.259.354-.217.596-.128.243.09.1.488 1.545 1.209.243.121.405.18.497.332.092.152.092.883-.125 1.5z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. بطاقة عسل السدر -->
+                <div class="product-card" data-category="honey" data-id="sidr-honey" data-name="عسل السدر الجبلي">
+                    <div class="product-badge">الأكثر مبيعاً وطبياً</div>
+                    <div class="product-image-area">
+                        <div class="jar-icon-visual jar-sidr"></div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">عسل السدر الجبلي الملكي</h3>
+                        <div class="product-rating">
+                            <span>★ ★ ★ ★ ★</span> (5.0/5)
+                        </div>
+                        <p class="product-desc">أجود وأنفس أنواع العسل الجبلي، غني جداً بالمعادن ومضادات الأكسدة ومقوي طبيعي للمناعة.</p>
+                        
+                        <!-- محدد الوزن (0.5كجم / 1كجم) -->
+                        <div class="weight-selector-box">
+                            <span class="weight-title">اختر الوزن المطلوب:</span>
+                            <div class="weight-options">
+                                <button class="weight-btn active" data-price="450" data-weight="1 كجم">1 كجم (450 ج.م)</button>
+                                <button class="weight-btn" data-price="240" data-weight="0.5 كجم">0.5 كجم (240 ج.م)</button>
+                            </div>
+                        </div>
+
+                        <div class="product-footer">
+                            <div class="price-container">
+                                <span class="price-number">450</span>
+                                <span class="price-currency">جنيه مصري</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="add-cart-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                    أضف للسلة
+                                </button>
+                                <button class="whatsapp-direct-btn" title="طلب مباشر عبر واتساب">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.514 0-9.989 4.478-9.989 9.993 0 1.763.459 3.483 1.33 5.004L2 22l5.148-1.348c1.468.8 3.111 1.22 4.88 1.22 5.513 0 9.991-4.476 9.991-9.99C22.02 6.478 17.545 2 12.031 2zm4.965 14.218c-.217.616-1.09 1.205-1.5 1.285-.366.071-.84.1-2.427-.562-2.03-.847-3.329-2.91-3.43-3.045-.1-.134-.813-.974-.813-1.942 0-.967.505-1.442.685-1.631.18-.189.395-.236.526-.236.13 0 .262.001.378.006.121.005.281-.047.439.333.163.389.557 1.354.606 1.453.049.098.082.213.016.344-.066.13-.131.21-.262.363-.13.152-.273.34-.39.456-.131.131-.268.273-.115.536.153.263.682 1.124 1.46 1.815.998.887 1.834 1.162 2.097 1.293.262.13.417.11.572-.07.154-.18.66-.767.838-1.027.177-.259.354-.217.596-.128.243.09.1.488 1.545 1.209.243.121.405.18.497.332.092.152.092.883-.125 1.5z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. بطاقة شمع العسل -->
+                <div class="product-card" data-category="mix" data-id="honey-comb" data-name="شمع العسل الطبيعي">
+                    <div class="product-badge">خام ومغذي 100%</div>
+                    <div class="product-image-area">
+                        <div class="jar-icon-visual jar-wax"></div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">شمع العسل الطبيعي (أقراص الشمع)</h3>
+                        <div class="product-rating">
+                            <span>★ ★ ★ ★ ★</span> (4.8/5)
+                        </div>
+                        <p class="product-desc">أقراص شمع العسل الطبيعي الممتلئة بالعسل الخام مباشرة من الخلية، غني بالإنزيمات والفوائد الصحية.</p>
+                        
+                        <!-- محدد الوزن (0.5كجم / 1كجم) -->
+                        <div class="weight-selector-box">
+                            <span class="weight-title">اختر الوزن المطلوب:</span>
+                            <div class="weight-options">
+                                <button class="weight-btn active" data-price="350" data-weight="1 كجم">1 كجم (350 ج.م)</button>
+                                <button class="weight-btn" data-price="190" data-weight="0.5 كجم">0.5 كجم (190 ج.م)</button>
+                            </div>
+                        </div>
+
+                        <div class="product-footer">
+                            <div class="price-container">
+                                <span class="price-number">350</span>
+                                <span class="price-currency">جنيه مصري</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="add-cart-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                    أضف للسلة
+                                </button>
+                                <button class="whatsapp-direct-btn" title="طلب مباشر عبر واتساب">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.514 0-9.989 4.478-9.989 9.993 0 1.763.459 3.483 1.33 5.004L2 22l5.148-1.348c1.468.8 3.111 1.22 4.88 1.22 5.513 0 9.991-4.476 9.991-9.99C22.02 6.478 17.545 2 12.031 2zm4.965 14.218c-.217.616-1.09 1.205-1.5 1.285-.366.071-.84.1-2.427-.562-2.03-.847-3.329-2.91-3.43-3.045-.1-.134-.813-.974-.813-1.942 0-.967.505-1.442.685-1.631.18-.189.395-.236.526-.236.13 0 .262.001.378.006.121.005.281-.047.439.333.163.389.557 1.354.606 1.453.049.098.082.213.016.344-.066.13-.131.21-.262.363-.13.152-.273.34-.39.456-.131.131-.268.273-.115.536.153.263.682 1.124 1.46 1.815.998.887 1.834 1.162 2.097 1.293.262.13.417.11.572-.07.154-.18.66-.767.838-1.027.177-.259.354-.217.596-.128.243.09.1.488 1.545 1.209.243.121.405.18.497.332.092.152.092.883-.125 1.5z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. بطاقة عسل بالمكسرات -->
+                <div class="product-card" data-category="mix" data-id="nuts-honey" data-name="عسل بالمكسرات">
+                    <div class="product-badge">خلطة طاقة ملكية</div>
+                    <div class="product-image-area">
+                        <div class="jar-icon-visual jar-nuts"></div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">عسل فاخر بالمكسرات المحمصة</h3>
+                        <div class="product-rating">
+                            <span>★ ★ ★ ★ ★</span> (4.95/5)
+                        </div>
+                        <p class="product-desc">مزيج فاخر من عسل دهب النقي مع أجود أنواع المكسرات الطازجة (كاجو، لوز، بندق، عين جمل) لمزيد من القوة والحيوية.</p>
+                        
+                        <!-- محدد الوزن (0.5كجم / 1كجم) -->
+                        <div class="weight-selector-box">
+                            <span class="weight-title">اختر الوزن المطلوب:</span>
+                            <div class="weight-options">
+                                <button class="weight-btn active" data-price="380" data-weight="1 كجم">1 كجم (380 ج.م)</button>
+                                <button class="weight-btn" data-price="210" data-weight="0.5 كجم">0.5 كجم (210 ج.م)</button>
+                            </div>
+                        </div>
+
+                        <div class="product-footer">
+                            <div class="price-container">
+                                <span class="price-number">380</span>
+                                <span class="price-currency">جنيه مصري</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="add-cart-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                    أضف للسلة
+                                </button>
+                                <button class="whatsapp-direct-btn" title="طلب مباشر عبر واتساب">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.514 0-9.989 4.478-9.989 9.993 0 1.763.459 3.483 1.33 5.004L2 22l5.148-1.348c1.468.8 3.111 1.22 4.88 1.22 5.513 0 9.991-4.476 9.991-9.99C22.02 6.478 17.545 2 12.031 2zm4.965 14.218c-.217.616-1.09 1.205-1.5 1.285-.366.071-.84.1-2.427-.562-2.03-.847-3.329-2.91-3.43-3.045-.1-.134-.813-.974-.813-1.942 0-.967.505-1.442.685-1.631.18-.189.395-.236.526-.236.13 0 .262.001.378.006.121.005.281-.047.439.333.163.389.557 1.354.606 1.453.049.098.082.213.016.344-.066.13-.131.21-.262.363-.13.152-.273.34-.39.456-.131.131-.268.273-.115.536.153.263.682 1.124 1.46 1.815.998.887 1.834 1.162 2.097 1.293.262.13.417.11.572-.07.154-.18.66-.767.838-1.027.177-.259.354-.217.596-.128.243.09.1.488 1.545 1.209.243.121.405.18.497.332.092.152.092.883-.125 1.5z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم سلة التسوق الجانبية (Cart Drawer) -->
+    <div class="cart-drawer-overlay" id="cartOverlay">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h3>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    سلة التسوق الخاصة بك
+                </h3>
+                <button class="close-cart-btn" id="closeCartBtn">&times;</button>
+            </div>
+            
+            <div class="cart-body" id="cartBody">
+                <!-- يتم تعبئة المنتجات تلقائياً عبر JavaScript -->
+                <div class="cart-empty-msg" id="cartEmptyMsg">
+                    <svg class="cart-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <p>سلة التسوق فارغة حالياً</p>
+                    <small>أضف بعض المنتجات الذهبية الفاخرة للبدء!</small>
+                </div>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span>إجمالي الطلب:</span>
+                    <span class="cart-total-val" id="cartTotalVal">0 جنيه</span>
+                </div>
+                <button class="btn btn-whatsapp checkout-whatsapp-btn" id="checkoutWhatsappBtn">
+                    تأكيد وإرسال الطلب عبر الواتساب 🚚
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم مميزات مناحل دهب (Features Section) -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <div class="badge-sub">ضمان الجودة والنزاهة</div>
+                <h2>لماذا يثق بنا آلاف العملاء؟</h2>
+                <div class="title-divider"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>طبيعي وخام 100%</h3>
+                    <p>مستخرج مباشرة من خلايانا دون تسخين أو بسترة يفقدانه الفوائد والإنزيمات الشفائية.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>مفحوص معملياً</h3>
+                    <p>نقوم بفحص كل شحنة في معامل معتمدة للتأكد من خلوه التام من السكر المضاف أو المبيدات.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>شغف بالدقة والتفاصيل</h3>
+                    <p>نُشرف بأنفسنا على جميع مراحل الإنتاج والتعبئة والتغليف بأعلى المعايير الصحية.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </div>
+                    <h3>شحن آمن وسريع</h3>
+                    <p>تغليف خاص ومحكم يضمن وصول عبوات العسل الزجاجية بأمان تام حتى باب بيتك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم من نحن (About Section) -->
+    <section id="about" class="about-section">
+        <div class="container about-grid">
+            <div class="about-card-visual">
+                <div class="honeycomb-pattern">⬡⬢⬡</div>
+                <h3 style="font-size: 2rem; color: var(--gold-bright); margin-bottom: 1rem;">مناحل دهب</h3>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">من الخلايا النظيفة بالمناحي إلى مائدتك بصفاء ونقاء ملكي.</p>
+            </div>
+            <div class="about-content">
+                <div class="badge-sub">قصة الشغف والنزاهة</div>
+                <h2>عندما تلتقي عراقة الطبيعة بالدقة الهندسية</h2>
+                <div class="title-divider" style="margin-right: 0; margin-left: auto;"></div>
+                <p style="margin-top: 1.5rem; color: var(--text-secondary);">تأسست <strong>مناحل دهب</strong> برؤية قائمة على إدخال أعلى درجات الدقة والنزاهة في إنتاج العسل الطبيعي. وجدنا أن العميل يبحث عن عسل حقيقي وموثق بلا شكوك، فأنشأنا مناحلنا لتكون المصدر الآمن والفاخر لجميع العائلات.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة (FAQ Section) -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <div class="badge-sub">استفسارات شائعة</div>
+                <h2>إجابات لجميع أسئلتك</h2>
+                <div class="title-divider"></div>
+            </div>
+            
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>كيف أتأكد أن العسل طبيعي 100% وغير مغشوش؟</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>جميع منتجات مناحل دهب تخضع لفحوصات معملية دقيقة في معامل معتمدة، ونوفر لك نتائج التحليل مع طلبك عند الطلب. نضمن لك استرداد المبلغ بالكامل إذا ثبت عكس ذلك في أي معمل معتمد.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>ما هي الأحجام المتوفرة لكل نوع عسل؟</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>جميع منتجاتنا متوفرة في عبوتين قياسيتين: عبوة 1 كجم وعبوة 0.5 كجم، يمكنك اختيار الوزن المناسب مباشرة من بطاقة المنتج.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>ما هي طريقة الشحن ومواعيد التوصيل؟</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نقوم بتغليف العبوات بوسائد حماية سميكة ضابطة للصدمات، والتوصيل يتم خلال 24 إلى 48 ساعة فقط لجميع المحافظات.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر (Footer) -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="#" class="logo" style="margin-bottom: 1rem;">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                    </svg>
+                    <span>مناحل <strong class="text-gold-gradient">دهب</strong></span>
+                </a>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">إنتاج وتعبئة أجود أنواع العسل الطبيعي الحر بأسلوب فاخر ونزاهة مطلقة.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--gold-bright); margin-bottom: 1.2rem;">روابط سريعة</h4>
+                <ul style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    <li><a href="#hero">الرئيسية</a></li>
+                    <li><a href="#products">منتجات العسل</a></li>
+                    <li><a href="#features">مميزاتنا</a></li>
+                    <li><a href="#about">عن دهب</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: var(--gold-bright); margin-bottom: 1.2rem;">التواصل المباشر</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">واتساب: <span dir="ltr">+20 109 357 9694</span></p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">خدمة العملاء: يومياً 9:00 ص - 10:00 م</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            جميع الحقوق محفوظة &copy; 2026 مناحل دهب. صُمم بكل فخامة وإتقان.
+        </div>
+    </footer>
+
+    <!-- ملف التفاعلية والمنطق JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
