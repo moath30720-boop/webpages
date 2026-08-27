@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,6 +21,12 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+}
+
+#home {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1 {
@@ -116,22 +123,40 @@ section h2 {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     background-color: rgb(200, 200, 100);
     border-radius: 20px;
     overflow: hidden;
     width: 300px;
+    height: 250px;
     transition: all 0.3s ease;
 }
 
-.card  img {
+.card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    align-self: flex-start;
 }
 
-.card h3 {
+.card h3{
+    display: inline;
     padding: 10px;
-    text-align: center;
+    color:rgb(50, 50, 5);
+    align-self: flex-start;
+} 
+
+.card a {
+    padding: 10px;
+    color:rgb(50, 50, 5);
+    align-self: flex-end;
+
+}
+
+.card a:hover {
+    color: rgb(110 , 140, 25);
 }
 
 .card:hover {
