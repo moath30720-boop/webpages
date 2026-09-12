@@ -1,4 +1,22 @@
+:root {
+  --black: #151515;
+  --gold: #C9A227;
 
+  --cream: #eadccb;
+  --off-white: #FBF8F1;
+
+  --honey-brown: #8A5A20;
+  --olive: #566B2F;
+
+  --text-dark: #202020;
+  --text-body: #403D38;
+  --text-muted: #706B62;
+
+  --border: #DDD4C3;
+
+  --citrus: #C86B28;
+  --beeswax: #D6A62A;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,18 +25,19 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(110, 140, 25);
-    color: rgb(50, 50, 50);
+    background: linear-gradient(to bottom, var(--black), var(--text-dark), var(--text-body), var(--text-muted));
+    color: var(--text-body);
 }
 
 nav {
-    background-color: rgb(200, 200, 100);
+    background-color: var(--text-muted);
     font-family: Arial, sans-serif;
 }
 
 ul {
     display: flex;
     justify-content: space-between;
+    color: var(--olive);
     align-items: center;
     padding: 1rem 2rem;
 }
@@ -30,19 +49,19 @@ ul {
 }
 
 h1 {
-    color: rgb(50, 50, 50);
+    color: var(--beeswax);
     margin: 0;
 }
 
 a {
     text-decoration: none;
-    color: rgb(50, 50, 50);
+    color: var(--cream);
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 a:hover {
-    color: rgb(110, 140, 25);
+    color: var(--citrus);
     transform: scale(1.05);
 }
 
@@ -52,23 +71,24 @@ a:hover {
     height: 40px;
 }
 
-.cart-icon {
+.cart-body {
     width: 30px;
     height: 30px;
+    stroke: var(--text-dark);
     transition: all 0.3s ease;
 }
 
 .cart-number {
     position: absolute;
-
+    
     top: -7px;
     right: -3px;
-
+    
     width: 20px;
     height: 20px;
-
-    background-color: red;
-    color: white;
+    
+    background-color: var(--citrus);
+    color: var(--off-white);
     
     border-radius: 50%;
     
@@ -80,12 +100,14 @@ a:hover {
     font-weight: bold;
 }
 
-.cart-icon:hover {  
-    color: rgb(110, 140, 25);
+.cart-body:hover {  
+    stroke: var(--citrus);
+    fill: var(--gold);
     transform: scale(1.05);
 }
 
 .hero {
+    /* background-color: var(--black); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,27 +116,35 @@ a:hover {
 } 
 
  .hero-content h1  {
+    color: var(--cream);
+    font-family: 'Georgia', serif;
     font-size: 3rem;
     margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
     margin: 20px;
-    background-color: rgb(50, 50, 5);
-    color: rgb(200, 200, 100);
+    background-color: var(--gold);
+    color: var(--black);
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
 .btn:hover {
-    color: rgb(50, 50, 5);
-    background-color: rgb(110, 140, 25);
+    background-color: var(--honey-brown);
     transform: scale(1.05);
 }
 
 section h2 {
+    color: var(--beeswax);
     text-align: center;
     margin: 50px 0 20px 0;
     font-size: 2rem;
@@ -141,7 +171,8 @@ section h2 {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: rgb(200, 200, 100);
+    background-color: var(--cream);
+    border: 1px solid var(--border);
     border-radius: 20px;
     overflow: visible;
     width: 300px;
@@ -164,7 +195,7 @@ section h2 {
 .category-item a{
     display: inline;
     padding: 10px;
-    color:rgb(50, 50, 5);
+    color:var(--text-dark);
 } 
 
 
@@ -173,22 +204,22 @@ section h2 {
     padding: 8px 14px;
     margin: 0;
     font-size: 0.8rem;
-    background-color: rgb(50, 50, 5);
-    color: rgb(80, 100, 15);
+    background-color: var(--black);
+    color: var(--citrus);
     border-radius: 5px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .shop-card-button:hover {
-    color: rgb(50, 50, 5);
-    background-color: rgb(110, 140, 25);
+    color: var(--cream);
+    background-color: var(--honey-brown);
     transform: scale(1.05);
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px 0 var(--honey-brown);
 }
 
 .card-actions {
