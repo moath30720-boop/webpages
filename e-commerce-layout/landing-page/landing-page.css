@@ -25,7 +25,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, var(--black), var(--text-dark), var(--text-body), var(--text-muted));
+    background: linear-gradient(to bottom, var(--black), var(--text-dark), var(--text-body), var(--text-muted) 90%, var(--cream));
     color: var(--text-body);
 }
 
@@ -42,15 +42,28 @@ ul {
     padding: 1rem 2rem;
 }
 
+.logo {
+    position:absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display:inline;
+    width: 50px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+}
+
 #home {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-h1 {
+nav h1 {
     color: var(--beeswax);
     margin: 0;
+    padding: 0 0 0 30px;
 }
 
 a {
@@ -143,10 +156,22 @@ a:hover {
     transform: scale(1.05);
 }
 
-section h2 {
+.sub-heading {
     color: var(--beeswax);
     text-align: center;
-    margin: 50px 0 20px 0;
+    margin: 10px;
+    font-size: 2rem;
+}
+.about-values-headings {
+    color: var(--beeswax);
+    text-align: center;
+    margin: 10px;
+    font-size: 2rem;
+}
+div h2 {
+    color: var(--olive);
+    text-align: right;
+    margin: 20px 0 20px 0;
     font-size: 2rem;
 }
 
@@ -156,6 +181,47 @@ section h2 {
     flex-wrap: wrap;
     gap: 50px;
     padding: 50px 20px;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px 20px;
+}
+
+.big-card {
+    width:90vw;
+    height: 250px;
+    background: radial-gradient(ellipse, var(--cream) , var(--gold));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    background-color: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: visible;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 12px;
+    margin: 20px;
+    font-size: 1.2rem;
+}
+
+h3 {
+    color: var(--olive);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.about-heading {
+    color: var(--olive);
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px;
 }
 
 .category {
@@ -169,6 +235,7 @@ section h2 {
 
 .card {
     display: flex;
+    background: radial-gradient(ellipse, var(--cream) , var(--gold));
     flex-direction: column;
     text-align: center;
     background-color: var(--cream);
@@ -222,6 +289,11 @@ section h2 {
     box-shadow: 0 0 10px 0 var(--honey-brown);
 }
 
+.big-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 0 var(--honey-brown);
+}
+
 .card-actions {
     display: flex;
     justify-content: center;
@@ -230,3 +302,114 @@ section h2 {
     padding: 0 10px 12px;
 }
 
+#contact {
+    display: grid;
+    background-color: var(--cream);
+    padding: 50px 20px;
+    text-align: right;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.contact-information {
+    text-decoration: none;
+    color: var(--honey-brown);
+}
+
+.footer {
+    background: #17130f;
+    color: #f4ebdd;
+    padding-top: 60px;
+}
+
+.footer-container {
+    width: min(1100px, 90%);
+    margin: auto;
+    text-align: right;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+.footer h2 {
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+.footer h3 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    color: #c9c0b4;
+    line-height: 1.7;
+}
+
+
+/* Links */
+
+.footer-links,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer a {
+    color: #c9c0b4;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer a:hover {
+    color: #d4af37;
+}
+
+
+/* Social Media */
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    align-items: flex-end;
+}
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+
+    color: #d4af37;
+    font-size: 18px;
+
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #d4af37;
+    color: #17130f;
+    transform: translateY(-3px);
+}
+
+
+/* Bottom */
+
+.footer-bottom {
+    margin-top: 50px;
+    padding: 20px;
+
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
