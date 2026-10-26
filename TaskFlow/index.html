@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-icon">⚡</span> TASKFLOW
+        </div>
+        
+        <nav>
+            <a href="#" class="nav-item active" data-view="dashboard">
+                <span class="nav-icon">🏠</span> Dashboard
+            </a>
+            <a href="#" class="nav-item" data-view="tasks">
+                <span class="nav-icon">✓</span> My Tasks
+            </a>
+            <a href="#" class="nav-item" data-view="today">
+                <span class="nav-icon">📅</span> Today
+            </a>
+            <a href="#" class="nav-item" data-view="projects">
+                <span class="nav-icon">📂</span> Projects
+            </a>
+        </nav>
+        
+        <button id="add-task-btn" class="btn-new-task">+ New Task</button>
+        
+        <div style="flex: 1;"></div>
+        
+        <nav>
+            <a href="#" class="nav-item" data-view="settings">
+                <span class="nav-icon">⚙</span> Settings
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <div class="mobile-logo">TASKFLOW</div>
+        <div class="mobile-actions">
+            <button class="mobile-search-btn" aria-label="Search">🔍</button>
+            <button class="mobile-theme-btn" aria-label="Toggle Theme">🌙</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            <div class="top-bar-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">🌙</button>
+                <button id="help-shortcut-btn" class="icon-btn" aria-label="Keyboard Shortcuts">❓</button>
+                <div class="user-avatar">👤</div>
+            </div>
+        </header>
+
+        <!-- Dashboard View -->
+        <section id="view-dashboard" class="view active">
+            <h1 id="greeting-text">Good evening 👋</h1>
+            <p>Here's what's happening with your tasks today.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card stat-total-card">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-info">
+                        <h3>Total Tasks</h3>
+                        <span id="stat-total" class="stat-number">0</span>
+                    </div>
+                </div>
+                <div class="stat-card stat-completed-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <h3>Completed</h3>
+                        <span id="stat-completed" class="stat-number">0</span>
+                    </div>
+                </div>
+                <div class="stat-card stat-progress-card">
+                    <div class="stat-icon">🔄</div>
+                    <div class="stat-info">
+                        <h3>In Progress</h3>
+                        <span id="stat-in-progress" class="stat-number">0</span>
+                    </div>
+                </div>
+                <div class="stat-card stat-overdue-card">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-info">
+                        <h3>Overdue</h3>
+                        <span id="stat-overdue" class="stat-number">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-columns">
+                <div class="dashboard-column">
+                    <h2>Recent Tasks</h2>
+                    <div id="dashboard-tasks" class="task-list"></div>
+                </div>
+                <div class="dashboard-column">
+                    <h2>Priority Distribution</h2>
+                    <div id="priority-chart" class="chart-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tasks View -->
+        <section id="view-tasks" class="view">
+            <div class="tasks-header-row">
+                <h2>My Tasks</h2>
+                <div class="view-toggle">
+                    <button class="view-toggle-btn active" data-mode="list">☰ List</button>
+                    <button class="view-toggle-btn" data-mode="board">▦ Board</button>
+                </div>
+                <button class="btn-primary btn-add-task">+ Add Task</button>
+            </div>
+            
+            <div class="tasks-toolbar">
+                <select id="filter-select">
+                    <option value="all">All Tasks</option>
+                    <option value="active">Active</option>
+                    <option value="completed">Completed</option>
+                    <option value="overdue">Overdue</option>
+                </select>
+                
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option>Programming</option>
+                    <option>Design</option>
+                    <option>Marketing</option>
+                    <option>Personal</option>
+                    <option>Health</option>
+                    <option>Finance</option>
+                    <option>Education</option>
+                    <option>Other</option>
+                </select>
+                
+                <select id="sort-select">
+                    <option value="created">Sort by: Created</option>
+                    <option value="due-date">Sort by: Due Date</option>
+                    <option value="priority">Sort by: Priority</option>
+                    <option value="alphabetical">Sort by: A-Z</option>
+                </select>
+            </div>
+            
+            <div id="task-list" class="task-list"></div>
+            
+            <div id="kanban-board" class="kanban-board hidden">
+                <div class="kanban-column" data-status="todo">
+                    <div class="kanban-header">
+                        <span class="kanban-dot dot-todo"></span>
+                        <h3>To Do</h3>
+                        <span class="kanban-count" id="kanban-todo-count">0</span>
+                    </div>
+                    <div class="kanban-cards" data-status="todo"></div>
+                </div>
+                <div class="kanban-column" data-status="in-progress">
+                    <div class="kanban-header">
+                        <span class="kanban-dot dot-progress"></span>
+                        <h3>In Progress</h3>
+                        <span class="kanban-count" id="kanban-progress-count">0</span>
+                    </div>
+                    <div class="kanban-cards" data-status="in-progress"></div>
+                </div>
+                <div class="kanban-column" data-status="done">
+                    <div class="kanban-header">
+                        <span class="kanban-dot dot-done"></span>
+                        <h3>Done</h3>
+                        <span class="kanban-count" id="kanban-done-count">0</span>
+                    </div>
+                    <div class="kanban-cards" data-status="done"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Today View -->
+        <section id="view-today" class="view">
+            <h2>📅 Today</h2>
+            <p>Tasks due today</p>
+            <div id="today-task-list" class="task-list"></div>
+        </section>
+
+        <!-- Projects View -->
+        <section id="view-projects" class="view">
+            <h2>📂 Projects</h2>
+            <p>Tasks organized by category</p>
+            <div id="projects-container" class="projects-grid"></div>
+        </section>
+
+        <!-- Settings View -->
+        <section id="view-settings" class="view">
+            <h2>⚙ Settings</h2>
+            
+            <div class="settings-group">
+                <h3>Appearance</h3>
+                <label class="setting-item">
+                    <span>Dark Mode</span>
+                    <input type="checkbox" id="settings-theme-toggle" class="toggle-switch">
+                </label>
+            </div>
+            
+            <div class="settings-group">
+                <h3>Data</h3>
+                <div class="setting-actions">
+                    <button id="export-tasks-btn" class="btn-secondary">Export Tasks</button>
+                    <button id="import-tasks-btn" class="btn-secondary">Import Tasks</button>
+                    <input type="file" id="import-file-input" class="hidden" accept=".json">
+                    <button id="clear-data-btn" class="btn-danger">Clear All Data</button>
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <h3>Keyboard Shortcuts</h3>
+                <table class="shortcuts-table">
+                    <tbody>
+                        <tr><td><kbd>N</kbd></td><td>New Task</td></tr>
+                        <tr><td><kbd>/</kbd></td><td>Search</td></tr>
+                        <tr><td><kbd>Esc</kbd></td><td>Close Modal</td></tr>
+                        <tr><td><kbd>D</kbd></td><td>Toggle Dark Mode</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="settings-group">
+                <h3>About</h3>
+                <p class="version-text">TaskFlow v1.0.0</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Create New Task</h2>
+                <button type="button" class="close-modal-btn btn-close-x" aria-label="Close">✕</button>
+            </div>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title-input">Task title</label>
+                    <input type="text" id="task-title-input" placeholder="Enter task title..." required>
+                    <span class="error-msg">Task title is required</span>
+                </div>
+                <div class="form-group">
+                    <label for="task-desc-input">Description</label>
+                    <textarea id="task-desc-input" placeholder="Add a description..." rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Priority</label>
+                    <div class="priority-selector">
+                        <button type="button" class="priority-btn" data-priority="low">Low</button>
+                        <button type="button" class="priority-btn active" data-priority="medium">Medium</button>
+                        <button type="button" class="priority-btn" data-priority="high">High</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="task-due-input">Due date</label>
+                    <input type="date" id="task-due-input">
+                </div>
+                <div class="form-group">
+                    <label for="task-category-input">Category</label>
+                    <select id="task-category-input">
+                        <option>Programming</option>
+                        <option>Design</option>
+                        <option>Marketing</option>
+                        <option>Personal</option>
+                        <option>Health</option>
+                        <option>Finance</option>
+                        <option>Education</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Subtasks</label>
+                    <div id="subtasks-container"></div>
+                    <button type="button" id="add-subtask-btn" class="btn-add-subtask">+ Add Subtask</button>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary btn-cancel close-modal-btn">Cancel</button>
+                    <button type="submit" id="modal-submit-btn" class="btn-primary">Create Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal-overlay">
+        <div class="modal modal-small">
+            <div class="modal-icon-large">🗑️</div>
+            <h2>Delete task?</h2>
+            <p>"<span id="delete-task-name"></span>" will be permanently deleted.</p>
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary btn-cancel close-modal-btn">Cancel</button>
+                <button type="button" id="delete-confirm-btn" class="btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="shortcuts-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Keyboard Shortcuts</h2>
+                <button type="button" class="close-modal-btn btn-close-x" aria-label="Close">✕</button>
+            </div>
+            <table class="shortcuts-table">
+                <tbody>
+                    <tr><td><kbd>N</kbd></td><td>New Task</td></tr>
+                    <tr><td><kbd>/</kbd></td><td>Focus Search</td></tr>
+                    <tr><td><kbd>Esc</kbd></td><td>Close Modal/Overlay</td></tr>
+                    <tr><td><kbd>D</kbd></td><td>Toggle Dark Mode</td></tr>
+                    <tr><td><kbd>1-5</kbd></td><td>Switch Views</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Focus Mode Overlay -->
+    <div id="focus-overlay" class="focus-overlay">
+        <div class="focus-content">
+            <button class="close-focus-btn btn-close-x" aria-label="Close Focus Mode">✕</button>
+            <h2>Focus Mode 🎯</h2>
+            <p id="focus-task-name"></p>
+            <div id="focus-timer" class="focus-timer">25:00</div>
+            <div class="focus-controls">
+                <button id="focus-start-btn" class="btn-primary">Start</button>
+                <button id="focus-reset-btn" class="btn-secondary">Reset</button>
+            </div>
+            <div class="focus-breaks">
+                <button class="btn-secondary break-btn" data-time="5">5 min break</button>
+                <button class="btn-secondary break-btn" data-time="15">15 min break</button>
+                <button class="btn-secondary break-btn" data-time="25">25 min block</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+</body>
+</html>

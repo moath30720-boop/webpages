@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Previewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Markdown Previewer</h1>
+      <p>Write Markdown on the left and see the HTML result on the right.</p>
+    </header>
+
+    <section class="workspace">
+      <div class="panel">
+        <h2>Markdown</h2>
+        <textarea id="markdown-input" placeholder="# Hello world
+
+**Bold text**
+*Italic text*
+
+> A quote
+
+[Visit Google](https://google.com)"></textarea>
+      </div>
+
+      <div class="panel">
+        <h2>HTML Output</h2>
+        <pre id="html-output"></pre>
+      </div>
+
+      <div class="panel preview-panel">
+        <h2>Preview</h2>
+        <div id="preview"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
