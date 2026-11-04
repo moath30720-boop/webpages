@@ -1,4 +1,5 @@
 :root {
+  /* ── Dark theme (default) ── */
   --black: #151515;
   --gold: #C9A227;
 
@@ -16,6 +17,51 @@
 
   --citrus: #C86B28;
   --beeswax: #D6A62A;
+
+  --bg-body: linear-gradient(to bottom, var(--black), var(--text-dark), var(--text-body), var(--text-muted) 90%, var(--cream));
+  --nav-bg: var(--text-muted);
+  --card-bg: radial-gradient(ellipse, var(--cream), var(--gold));
+  --card-surface: var(--cream);
+  --footer-bg: #17130f;
+  --footer-text: #f4ebdd;
+  --footer-muted: #c9c0b4;
+  --footer-accent: #d4af37;
+  --cart-item-bg: #fff;
+  --overlay-bg: rgba(21, 21, 21, 0.65);
+  --cart-icon-color: rgb(50, 50, 50);
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --black: #ffffff;
+  --gold: #B8911E;
+
+  --cream: #FFF9F0;
+  --off-white: #FFFFFF;
+
+  --honey-brown: #9A6A2A;
+  --olive: #4A7A3A;
+
+  --text-dark: #1A1A1A;
+  --text-body: #333330;
+  --text-muted: #888880;
+
+  --border: #E0D8CC;
+
+  --citrus: #D07030;
+  --beeswax: #C89A20;
+
+  --bg-body: linear-gradient(to bottom, #FEFEFE, #FBF8F1, #F5F0E8, #EDE5D8 90%, #E8DFD0);
+  --nav-bg: #FFFDF8;
+  --card-bg: radial-gradient(ellipse, #FFFDF8, #F5EDD8);
+  --card-surface: #FFFDF8;
+  --footer-bg: #2C2620;
+  --footer-text: #f4ebdd;
+  --footer-muted: #c9c0b4;
+  --footer-accent: #d4af37;
+  --cart-item-bg: #FFFFFF;
+  --overlay-bg: rgba(0, 0, 0, 0.35);
+  --cart-icon-color: #333330;
 }
 * {
     box-sizing: border-box;
@@ -29,13 +75,15 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, var(--black), var(--text-dark), var(--text-body), var(--text-muted) 90%, var(--cream));
+    background: var(--bg-body);
     color: var(--text-body);
 }
 
 nav {
-    background-color: var(--text-muted);
+    background-color: var(--nav-bg);
     font-family: Arial, sans-serif;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.4s ease;
 }
 
 ul {
@@ -211,7 +259,7 @@ div h2 {
 .big-card {
     width:90vw;
     height: 250px;
-    background: radial-gradient(ellipse, var(--cream) , var(--gold));
+    background: var(--card-bg);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -271,7 +319,7 @@ h3 {
 
 .card {
     display: flex;
-    background: radial-gradient(ellipse, var(--cream) , var(--gold));
+    background: var(--card-bg);
     flex-direction: column;
     text-align: center;
     background-color: var(--cream);
@@ -357,8 +405,8 @@ h3 {
 }
 
 .footer {
-    background: #17130f;
-    color: #f4ebdd;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     padding-top: 60px;
 }
 
@@ -372,19 +420,19 @@ h3 {
 }
 
 .footer h2 {
-    color: #d4af37;
+    color: var(--footer-accent);
     margin-bottom: 12px;
     text-align: center;
 }
 
 .footer h3 {
-    color: #d4af37;
+    color: var(--footer-accent);
     margin-bottom: 20px;
     text-align: center;
 }
 
 .footer p {
-    color: #c9c0b4;
+    color: var(--footer-muted);
     line-height: 1.7;
 }
 
@@ -399,13 +447,13 @@ h3 {
 }
 
 .footer a {
-    color: #c9c0b4;
+    color: var(--footer-muted);
     text-decoration: none;
     transition: 0.3s ease;
 }
 
 .footer a:hover {
-    color: #d4af37;
+    color: var(--footer-accent);
 }
 
 
@@ -424,18 +472,18 @@ h3 {
 
     display: grid;
 
-    border: 1px solid #d4af37;
+    border: 1px solid var(--footer-accent);
     border-radius: 50%;
 
-    color: #d4af37;
+    color: var(--footer-accent);
     font-size: 18px;
 
     transition: 0.3s ease;
 }
 
 .social-links a:hover {
-    background: #d4af37;
-    color: #17130f;
+    background: var(--footer-accent);
+    color: var(--footer-bg);
     transform: translateY(-3px);
 }
 
@@ -446,7 +494,7 @@ h3 {
     margin-top: 50px;
     padding: 20px;
 
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-top: 1px solid var(--border);
 
     text-align: center;
 }
@@ -495,7 +543,7 @@ h3 {
     inset: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(21, 21, 21, 0.65);
+    background-color: var(--overlay-bg);
     backdrop-filter: blur(4px);
     z-index: 9998;
     opacity: 0;
@@ -646,7 +694,7 @@ h3 {
     display: flex;
     align-items: center;
     gap: 14px;
-    background: #fff;
+    background: var(--cart-item-bg);
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 12px;
@@ -955,7 +1003,7 @@ h3 {
     inset: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(21, 21, 21, 0.7);
+    background-color: var(--overlay-bg);
     backdrop-filter: blur(4px);
     z-index: 10000;
     display: flex;
@@ -1079,5 +1127,264 @@ h3 {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+
+/* ── Theme transition ── */
+body,
+nav,
+.card,
+.big-card,
+.footer,
+.cart-drawer,
+.cart-drawer-header,
+.cart-drawer-footer,
+.checkout-modal,
+.checkout-modal-header,
+.checkout-modal-footer {
+    transition: background 0.4s ease, background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ── Light theme nav link color override ── */
+[data-theme="light"] a {
+    color: var(--text-body);
+}
+[data-theme="light"] h1 {
+    color: var(--gold);
+}
+[data-theme="light"] a:hover {
+    color: var(--citrus);
+}
+[data-theme="light"] .shop-card-button {
+    background-color: var(--text-dark);
+    color: var(--cream);
+}
+[data-theme="light"] .shop-card-button:hover {
+    background-color: var(--honey-brown);
+    color: #fff;
+}
+[data-theme="light"] nav {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+[data-theme="light"] .cart-toast {
+    background: var(--text-dark);
+}
+[data-theme="light"] .footer a {
+    color: var(--footer-muted);
+}
+[data-theme="light"] .footer a:hover {
+    color: var(--footer-accent);
+}
+[data-theme="light"] .btn {
+    background-color: var(--gold);
+    color: #fff;
+}
+[data-theme="light"] .checkout-form-group input,
+[data-theme="light"] .checkout-form-group textarea {
+    background: var(--off-white);
+}
+[data-theme="light"] .cart-btn-secondary:hover {
+    background-color: var(--cream);
+}
+
+/* ── Theme Toggle Button ── */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: 2px solid var(--beeswax);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.theme-toggle-btn:hover {
+    background-color: rgba(201, 162, 39, 0.15);
+    transform: scale(1.1);
+    border-color: var(--gold);
+}
+
+.theme-toggle-btn .icon-sun,
+.theme-toggle-btn .icon-moon {
+    position: absolute;
+    font-size: 1rem;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Dark mode: show sun icon (user can switch to light) */
+.theme-toggle-btn .icon-sun {
+    color: var(--beeswax);
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+.theme-toggle-btn .icon-moon {
+    color: var(--beeswax);
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+/* Light mode: show moon icon (user can switch to dark) */
+[data-theme="light"] .theme-toggle-btn .icon-sun {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+[data-theme="light"] .theme-toggle-btn .icon-moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: var(--text-body);
+}
+[data-theme="light"] .theme-toggle-btn {
+    border-color: var(--text-muted);
+}
+[data-theme="light"] .theme-toggle-btn:hover {
+    border-color: var(--citrus);
+}
+
+
+/* ── Theme transition ── */
+body,
+nav,
+.card,
+.big-card,
+.footer,
+.cart-drawer,
+.cart-drawer-header,
+.cart-drawer-footer,
+.checkout-modal,
+.checkout-modal-header,
+.checkout-modal-footer {
+    transition: all 0.4s ease;
+}
+
+/* ── Light theme nav link color override ── */
+[data-theme="light"] a {
+    color: var(--text-body);
+}
+[data-theme="light"] .card {
+   
+    transition: all 0.3s ease;
+}
+[data-theme="light"] .card:hover {
+    
+    transform: scale(1.05);
+}
+[data-theme="light"] .big-card {
+   
+    transition: all 0.3s ease;
+}
+[data-theme="light"] .big-card:hover {
+  
+    transform: scale(1.05);
+}
+[data-theme="light"] a:hover {
+    color: var(--citrus);
+}
+[data-theme="light"] .shop-card-button {
+    background-color: var(--text-dark);
+    color: var(--cream);
+}
+[data-theme="light"] .shop-card-button:hover {
+    background-color: var(--honey-brown);
+    color: #fff;
+}
+[data-theme="light"] nav {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+[data-theme="light"] .cart-toast {
+    background: var(--text-dark);
+}
+[data-theme="light"] .footer a {
+    color: var(--footer-muted);
+}
+[data-theme="light"] .footer a:hover {
+    color: var(--footer-accent);
+}
+[data-theme="light"] .btn {
+    background-color: var(--gold);
+    color: #fff;
+}
+[data-theme="light"] .checkout-form-group input,
+[data-theme="light"] .checkout-form-group textarea {
+    background: var(--off-white);
+}
+[data-theme="light"] .cart-btn-secondary:hover {
+    background-color: var(--cream);
+}
+
+/* ── Theme Toggle Button ── */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: 2px solid var(--beeswax);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.theme-toggle-btn:hover {
+    background-color: rgba(201, 162, 39, 0.15);
+    transform: scale(1.1);
+    border-color: var(--gold);
+}
+
+.theme-toggle-btn .icon-sun,
+.theme-toggle-btn .icon-moon {
+    position: absolute;
+    font-size: 1rem;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Dark mode: show sun icon (user can switch to light) */
+.theme-toggle-btn .icon-sun {
+    color: var(--beeswax);
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+.theme-toggle-btn .icon-moon {
+    color: var(--beeswax);
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+/* Light mode: show moon icon (user can switch to dark) */
+[data-theme="light"] .theme-toggle-btn .icon-sun {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+[data-theme="light"] .theme-toggle-btn .icon-moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: var(--text-body);
+}
+[data-theme="light"] .theme-toggle-btn {
+    border-color: var(--text-muted);
+}
+[data-theme="light"] .theme-toggle-btn:hover {
+    border-color: var(--citrus);
 }

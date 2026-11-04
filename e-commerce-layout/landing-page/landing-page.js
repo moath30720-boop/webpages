@@ -536,12 +536,51 @@
     // =========================================================================
     // Initialization Bootstrap
     // =========================================================================
+    
+
+    // =========================================================================
+    // Theme Toggle (Dark / Light)
+    // =========================================================================
+    function setupThemeToggle() {
+        const THEME_KEY = 'mnahil_theme';
+        const root = document.documentElement;
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (!toggleBtn) return;
+
+        function currentTheme() {
+            return root.getAttribute('data-theme') || 'dark';
+        }
+
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            try {
+                localStorage.setItem(THEME_KEY, theme);
+            } catch (e) {}
+        }
+
+        // Initialize: if no data-theme set yet, use stored or default dark
+        if (!root.getAttribute('data-theme')) {
+            try {
+                var saved = localStorage.getItem(THEME_KEY);
+                applyTheme(saved || 'dark');
+            } catch (e) {
+                applyTheme('dark');
+            }
+        }
+
+        toggleBtn.addEventListener('click', function () {
+            var next = currentTheme() === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+        });
+    }
+
     function start() {
         // Try mounting React
         let attempts = 0;
         function tryMount() {
             if (initReactCart()) {
                 setupDOMListeners();
+                setupThemeToggle();
             } else if (attempts < 20) {
                 attempts++;
                 setTimeout(tryMount, 100);
